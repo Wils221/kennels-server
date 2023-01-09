@@ -1,11 +1,13 @@
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
-
+from views import get_all_animals
 
 # Here's a class. It inherits from another class.
 # For now, think of a class as a container for functions that
 # work together for a common purpose. In this case, that
 # common purpose is to respond to HTTP requests from a client.
+
+
 class HandleRequests(BaseHTTPRequestHandler):
     # This is a Docstring it should be at the beginning of all classes and functions
     # It gives a description of the class or function
@@ -29,15 +31,14 @@ class HandleRequests(BaseHTTPRequestHandler):
         if self.path == "/animals":
             # In Python, this is a list of dictionaries
             # In JavaScript, you would call it an array of objects
-            response = [
-                {"id": 1, "name": "Snickers", "species": "Dog"},
-                {"id": 2, "name": "Lenny", "species": "Cat"}
-            ]
+            if self.path == "/animals":
+                response = get_all_animals()
 
-        else:
-            response = []
 
-        # Send a JSON formatted string as a response
+            else:
+                response = []
+
+    # Send a JSON formatted string as a response
         self.wfile.write(json.dumps(response).encode())
 
     # Here's a method on the class that overrides the parent's method.
