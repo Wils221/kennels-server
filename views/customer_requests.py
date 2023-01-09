@@ -1,23 +1,23 @@
-EMPLOYEES = [
+CUSTOMERS = [
     {
         "id": 1,
-        "name": "Jenna Solis"
+        "name": "Ryan Tanay"
     }
 ]
-def get_all_employees():
-    return EMPLOYEES
+def get_all_customers():
+    return CUSTOMERS
 
     # Function with a single parameter
-def get_single_employee(id):
+def get_single_customer(id):
     # Variable to hold the found animal, if it exists
-    requested_employee = None
+    requested_customer = None
 
     # Iterate the ANIMALS list above. Very similar to the
     # for..of loops you used in JavaScript.
-    for employee in EMPLOYEES:
+    for customer in CUSTOMERS:
         # Dictionaries in Python use [] notation to find a key
         # instead of the dot notation that JavaScript used.
-        if employee["id"] == id:
-            requested_employee = employee
+        if customer["id"] == id:
+            requested_customer = employee
 
-    return requested_employee
+    return requested_customer
